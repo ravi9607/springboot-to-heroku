@@ -23,7 +23,13 @@ public class serviceImplement  {
     }
 
     public user getUserById(long id){
-        return userRepository.findById(id).get();   // "getOne(id)" NOT WORK  use  "findById(id).get()"
+        user u = null;
+        try {
+            u= userRepository.findById(id).get();   // "getOne(id)" NOT WORK  use  "findById(id).get()"
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return u; 
     }
 
     public user updateUser(user User){
