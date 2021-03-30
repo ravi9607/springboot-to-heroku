@@ -53,10 +53,10 @@ public class springController {
 
     @PutMapping("/stu")
     public ResponseEntity<user> update(@RequestBody user User){
-        user u= null;
+
         try{
-            u= serviceimplement.updateUser(User);
-            return ResponseEntity.of(Optional.of(u));
+            serviceimplement.updateUser(User);
+            return ResponseEntity.ok().body(User);
         }catch (Exception e){
             e.printStackTrace();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
