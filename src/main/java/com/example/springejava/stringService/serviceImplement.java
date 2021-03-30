@@ -3,8 +3,6 @@ package com.example.springejava.stringService;
 import com.example.springejava.User.user;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -36,4 +34,10 @@ public class serviceImplement  {
         user u = userRepository.findById(parseLong).get();
         userRepository.delete(u);
     }
+
+    public List<user> getUserByName(String fName){
+        return  userRepository.findByFName(fName);
+    }
+
+
 }

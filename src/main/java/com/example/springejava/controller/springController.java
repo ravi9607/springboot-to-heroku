@@ -14,6 +14,7 @@ public class springController {
 
     @Autowired
     private serviceImplement serviceimplement;
+    private String fName;
 
     @GetMapping("/stu")
     public List<user> findAll(){
@@ -30,9 +31,9 @@ public class springController {
         return  this.serviceimplement.addUser(User);
     }
 
-    @GetMapping("/stu/{id}")
-    public user getUserById(@PathVariable String id){
-        return this.serviceimplement.getUserById(Long.parseLong(id));
+    @GetMapping("/stu/id/{id}")
+    public user getUserById(@PathVariable("id") Long id){
+        return serviceimplement.getUserById(id);
     }
 
     @PutMapping("/stu")
@@ -40,8 +41,15 @@ public class springController {
         return this.serviceimplement.updateUser(User);
     }
 
-    @DeleteMapping("/stu/{id}")
+    @DeleteMapping("/stu/id/{id}")
     public void delete(@PathVariable String id){
         this.serviceimplement.deleteById(Long.parseLong(id));
     }
+
+    @GetMapping("/stu/fname/{fName}")
+    public List<user> getUserByName(@PathVariable("fName") final String fName){
+        return  this.serviceimplement.getUserByName(fName);
+    }
+
+
 }
