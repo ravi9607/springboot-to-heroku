@@ -4,6 +4,7 @@ import com.example.springejava.User.user;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.util.List;
 
 @Service
@@ -17,7 +18,14 @@ public class serviceImplement  {
     }
 
 
-    public user addUser(user User){
+    public user addUser(user User) throws IOException {
+//        if(User==null){
+//            return try {
+//                throw new Exception("Null object");
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//        }
         userRepository.save(User);
         return User;
     }
@@ -41,9 +49,13 @@ public class serviceImplement  {
         userRepository.delete(u);
     }
 
-    public List<user> getUserByName(String fName){
+    public user getUserByName(String fName){
         return  userRepository.findByFName(fName);
     }
+
+//    public List<user> findByIdAndFName(Long Id,String FName){
+//        return userRepository.findAllByIdAndFName(Id,FName);
+//    }
 
 
 }

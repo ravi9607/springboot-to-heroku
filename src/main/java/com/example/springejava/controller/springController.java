@@ -19,14 +19,22 @@ public class springController {
     private serviceImplement serviceimplement;
     private String fName;
 
-    @GetMapping("/stu")
-    public List<user> findAll(){
-        return this.serviceimplement.getUsers();
-    }
 
     @GetMapping("/name")
     public String Hello(String name){
         return name;
+    }
+
+
+
+    @GetMapping("/stu")
+    public ResponseEntity<List<user>> findAll(){
+
+        List<user> u=serviceimplement.getUsers();
+        if(u.size() <= 0){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+        return ResponseEntity.status(HttpStatus.CREATED).body(u);
     }
 
     @PostMapping("/stu")
@@ -75,9 +83,7 @@ public class springController {
     }
 
     @GetMapping("/stu/fname/{fName}")
-    public List<user> getUserByName(@PathVariable("fName") final String fName){
+    public user getUserByName(@PathVariable("fName") String fName){
         return  this.serviceimplement.getUserByName(fName);
     }
-
-
 }
