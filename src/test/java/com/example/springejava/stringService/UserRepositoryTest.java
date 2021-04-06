@@ -10,30 +10,31 @@ import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
 @SpringBootTest
 public class UserRepositoryTest {
+//
+//    @Autowired
+//    private UserRepository userRepository;
+//
 
-    @Autowired
-    private UserRepository userRepository;
-
-
-    @Test
-    void findByFName() {
-        String fName="ra1";
-//        user u = new user();
-//        u.setId(100L);
-//        u.setFName("ABC");
-//        u.setLName("XYZ");
-//        u.setPNumber(11111L);
-//        userRepository.save(u);
-
-        user expected = userRepository.findByFName(fName);
-        assertThat(expected.getFName()).isNotNull();
-        assertThat(expected.getFName()).isEqualTo(fName);
-
-    }
-
-    @Test
-    @Disabled
-    void findAllByIdAndFName() {
-    }
+//    @Test
+//    void findByFName() {
+//        String fName="ra1";
+////        user u = new user();
+////        u.setId(100L);
+////        u.setFName("ABC");
+////        u.setLName("XYZ");
+////        u.setPNumber(11111L);
+////        userRepository.save(u);
+//
+//        user expected = userRepository.findByFName(fName);
+////        assertThat(expected.getFName()).isNotNull();
+//        assertThat(expected.getFName()).isNotNull();
+//        assertThat(expected.getFName()).isEqualTo(fName);
+//
+//    }
+//
+//    @Test
+//    @Disabled
+//    void findAllByIdAndFName() {
+//    }
 
 }

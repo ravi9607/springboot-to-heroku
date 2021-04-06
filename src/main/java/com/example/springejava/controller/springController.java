@@ -82,8 +82,8 @@ public class springController {
         }
     }
 
-    @GetMapping("/stu/fname/{fName}")
-    public user getUserByName(@PathVariable("fName") String fName){
-        return  this.serviceimplement.getUserByName(fName);
-    }
+//    @GetMapping("/stu/fname/{fName}")
+//    public user getUserByName(@PathVariable("fName") String fName){
+//        return  this.serviceimplement.getUserByName(fName);
+//    }
 }

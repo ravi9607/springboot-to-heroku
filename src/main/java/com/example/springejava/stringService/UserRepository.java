@@ -19,8 +19,8 @@ public interface UserRepository extends JpaRepository<user,Long> {
     @Query("select u from user u where u.id >:n")
     public List<user> getuserByIdMoreThanFive(@Param("n") Long id);
 
-    @Query("select u FROM user u where u.fName =:fname and u.lName =:lname")
-    public List<user> ABCEFNameAndLName(@Param("fname") String fname, @Param("lname") String lname);
+//    @Query("select u FROM user u where u.fName =:fname and u.lName =:lname")
+//    public List<user> ABCEFNameAndLName(@Param("fname") String fname, @Param("lname") String lname);
 
-    //List<user> findByFNameAndLName(String fname, String lname);
+    List<user> findByFNameAndLName(String fname, String lname);
 }
