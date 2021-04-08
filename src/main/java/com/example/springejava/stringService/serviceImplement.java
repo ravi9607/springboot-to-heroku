@@ -18,7 +18,7 @@ public class serviceImplement  {
     }
 
 
-    public user addUser(user User) throws IOException {
+    public user addUser(user User)  {
 //        if(User==null){
 //            return try {
 //                throw new Exception("Null object");
