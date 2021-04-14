@@ -21,9 +21,6 @@ public class user {
     private long id;
     private String fName;
     private String lName;
-    @Column(
-
-    )
     private long pNumber;
 
     public user(Long id, String fName, String lName, Long pNumber) {
