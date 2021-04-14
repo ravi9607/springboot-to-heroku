@@ -16,6 +16,10 @@
     <properties>
         <java.version>14</java.version>
 
+        <start-class>
+            com.example.springejava.SpringejavaApplication
+        </start-class>
+
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>15</maven.compiler.source>
         <maven.compiler.target>15</maven.compiler.target>
